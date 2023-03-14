@@ -36,6 +36,7 @@ const sendEmail = async (to, subject, text) => {
 
 
 app.post('/', (req, res)=>{
+    console.log('access')
     sendEmail(req.body.to,req.body.subject, req.body.body)
     res.json('success')
 })
