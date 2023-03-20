@@ -32,11 +32,10 @@ const sendEmail = async (to, subject, text) => {
   await transporter.sendMail(message);
 };
 
-//module.exports = sendEmail;
 
 
 app.post('/', (req, res)=>{
-    console.log('access')
+    console.log('accessed')
     sendEmail(req.body.to,req.body.subject, req.body.body)
     res.json('success')
 })
